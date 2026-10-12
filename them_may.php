@@ -5,6 +5,7 @@ $ds_khu_vuc = $conn->query("SELECT * FROM zone")->fetchAll(PDO::FETCH_ASSOC);
 
 $thong_bao_loi = "";
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ten_may = trim($_POST['computer_name']);
     $zone_id = $_POST['zone_id'];
