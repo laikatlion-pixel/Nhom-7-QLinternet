@@ -1,7 +1,6 @@
 <?php
 require_once 'ketnoi.php';
 
-// Lấy danh sách khu vực đổ vào thẻ select
 $ds_khu_vuc = $conn->query("SELECT * FROM zone")->fetchAll(PDO::FETCH_ASSOC);
 
 $thong_bao_loi = "";
@@ -20,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare($sql);
         $stmt->execute([$ten_may, $zone_id, $cau_hinh, $gia_tien, $ghi_chu]);
 
-        // Thêm xong quay về trang danh sách
         header("Location: ds_may.php");
         exit();
     }
